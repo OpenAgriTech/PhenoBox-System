@@ -1,8 +1,9 @@
+from __future__ import absolute_import
 import RPi.GPIO as GPIO
 
-from input_controller import InputController, DoorState, ButtonPress
-from led_controller import LedController
-from motor_controller import MotorController
+from .input_controller import InputController, DoorState, ButtonPress
+from .led_controller import LedController
+from .motor_controller import MotorController
 
 GPIO.setmode(GPIO.BCM)
 

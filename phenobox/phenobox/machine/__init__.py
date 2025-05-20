@@ -1,1 +1,2 @@
-from phenobox_machine import PhenoboxMachine
+from __future__ import absolute_import
+from .phenobox_machine import PhenoboxMachine

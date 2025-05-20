@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import os
 
 import time
@@ -5,7 +6,7 @@ import time
 import sys
 
 import photobox
-from config import config
+from .config import config
 
 config.load_config('{}/{}'.format('config', 'production_config.ini'))
 while not os.path.ismount(getattr(config, 'cfg').get('box', 'shared_folder_mountpoint')):

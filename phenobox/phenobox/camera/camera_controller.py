@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import object
 import ctypes
 import errno
 import logging
@@ -77,7 +79,7 @@ def check_unref(result, camfile):
         raise libgphoto2error(result, message)
 
 
-class CameraController:
+class CameraController(object):
     context = None
 
     cam = None  #:a reference to the camera which should be used

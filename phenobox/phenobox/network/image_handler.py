@@ -1,9 +1,13 @@
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
 import errno
 import fnmatch
 import logging
 import os
 import threading
-from Queue import Queue, Empty
+from queue import Queue, Empty
 
 from PIL import Image
 from colorama import Fore

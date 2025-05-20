@@ -1,3 +1,4 @@
+from builtins import object
 import logging
 from time import time
 
@@ -15,7 +16,7 @@ class ButtonPress(Enum):
     LONG = 2
 
 
-class InputController:
+class InputController(object):
     _START_BUTTON = 12  #:GPIO Pin to which the start button is connected
     _DOOR_CONTACT = 4  #:GPIO Pin to which the door contact switch is connected
     _door_closed = True

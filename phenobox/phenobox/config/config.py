@@ -1,4 +1,6 @@
-from ConfigParser import ConfigParser
+from future import standard_library
+standard_library.install_aliases()
+from configparser import ConfigParser
 
 cfg = None  #:Global variable to hold the config object after it has been loaded
 

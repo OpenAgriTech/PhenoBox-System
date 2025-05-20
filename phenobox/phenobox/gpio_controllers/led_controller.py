@@ -1,9 +1,11 @@
+from __future__ import absolute_import
+from builtins import object
 import RPi.GPIO as GPIO
 
-from blinker import Blinker
+from .blinker import Blinker
 
 
-class LedController:
+class LedController(object):
     #:GPIO Pin to which the green LED is connected
     _GREEN = 19
     #:GPIO Pin to which the blue LED is connected

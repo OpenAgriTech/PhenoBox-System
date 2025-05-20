@@ -1,11 +1,15 @@
+from future import standard_library
+standard_library.install_aliases()
+from builtins import range
+from builtins import object
 import datetime
 import jsonpickle
 import logging
 import os
-from __builtin__ import len
+from builtins import len
 
 
-class Plant:
+class Plant(object):
     def __init__(self):
         # TODO add full_name
         self.name = ""

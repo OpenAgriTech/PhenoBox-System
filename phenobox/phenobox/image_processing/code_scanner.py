@@ -1,3 +1,4 @@
+from builtins import object
 import logging
 import os
 
@@ -6,7 +7,7 @@ from pyzbar import pyzbar
 from pyzbar.wrapper import ZBarSymbol
 
 
-class CodeScanner:
+class CodeScanner(object):
 
     def __init__(self):
         self._logger = logging.getLogger(__name__)

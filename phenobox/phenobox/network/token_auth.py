@@ -1,3 +1,4 @@
+from builtins import object
 import time
 
 import jwt
@@ -7,7 +8,7 @@ from requests import Request
 from network import UnableToAuthenticateError
 
 
-class TokenAuth:
+class TokenAuth(object):
     """
     Class used to implement JWT Token authentication
     """

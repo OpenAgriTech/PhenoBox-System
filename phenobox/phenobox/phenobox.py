@@ -1,23 +1,28 @@
+from __future__ import print_function
+from __future__ import absolute_import
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 import logging
 import subprocess
 import sys
-from Queue import Queue, Empty
+from queue import Queue, Empty
 from logging.handlers import RotatingFileHandler
 
 from colorama import init, Fore
 
-import gpio_controllers as gpio
-from camera import CameraController
-from config import config
-from event import Event
-from gpio_controllers import InputController, LedController, MotorController, DoorState, ButtonPress
-from image_processing import CodeScanner
-from machine import PhenoboxMachine
-from network import TokenAuth
-from network.image_handler import ImageHandler
+from . import gpio_controllers as gpio
+from .camera import CameraController
+from .config import config
+from .event import Event
+from .gpio_controllers import InputController, LedController, MotorController, DoorState, ButtonPress
+from .image_processing import CodeScanner
+from .machine import PhenoboxMachine
+from .network import TokenAuth
+from .network.image_handler import ImageHandler
 
 
-class Phenobox():
+class Phenobox(object):
     def __init__(self):
         self.phenobox_machine, self.motor_controller, self.led_controller, self.camera_controller, self.image_handler = self.initialize()
         self.input_controller = InputController()
@@ -130,7 +135,7 @@ class Phenobox():
                     break
 
         except KeyboardInterrupt:
-            print "keyboard interrupt"
+            print("keyboard interrupt")
         print(Fore.MAGENTA + 'Shutdown initiated')
         self._terminate()
         if shutdown:
